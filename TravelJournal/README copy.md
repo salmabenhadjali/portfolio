@@ -1,4 +1,4 @@
-# React Projects Portfolio
+# Travel Journal Project
 
 # How to run it on Dev environment
 
@@ -8,6 +8,7 @@
 ### 2-  Install NPM
 ```bash
 nvm install <version>
+nvm install v18
 npm -v
 node -v
 ```

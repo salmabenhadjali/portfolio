@@ -1,0 +1,15 @@
+.header-navigation {
+    background-color: #e98888;
+    color: whitesmoke;
+    border-radius: 15px 15px 0 0;
+    padding: 0.5rem;
+
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.header-navigation img {
+    width: 30px;
+    height: auto;
+}
