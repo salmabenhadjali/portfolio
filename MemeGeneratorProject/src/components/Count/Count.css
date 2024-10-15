@@ -1,0 +1,11 @@
+.counter--count {
+    background-color: whitesmoke;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}

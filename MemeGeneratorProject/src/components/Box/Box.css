@@ -1,0 +1,6 @@
+.squares .square {
+    width: 5rem;
+    height: 5rem;
+    border: 2px solid black;
+    border-radius: 5px;
+}

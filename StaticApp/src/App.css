@@ -31,7 +31,9 @@ nav {
 }
 
 .nav--icon {
-  height: 50px;
+  height: 40px;
+  width: auto;
+  margin-right: 5px;
 }
 
 main {
