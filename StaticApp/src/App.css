@@ -1,33 +1,33 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
   font-family: Inter, sans-serif;
   background-color: #000000;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 nav {
   display: flex;
   align-items: center;
-  background-color: #242424;
+  background-color: #fff;
   height: 90px;
   padding: 30px 25px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  z-index: 1;
 }
 
-.nav--logo_text, .nav--title {
-  margin: 0;
-}
-
-.nav--logo_text {
-  margin-right: auto;
-  color: #61DAFB;
-}
-
-.nav--title {
-  color: #DEEBF8;
-  font-weight: 600;
+nav.dark {
+  background-color: #242424;
+  box-shadow: 0 1px 4px black;
 }
 
 .nav--icon {
@@ -36,18 +36,95 @@ nav {
   margin-right: 5px;
 }
 
-main {
+.nav--logo_text {
+  color: #61DAFB;
+  margin-right: auto;
+}
+
+.nav--title {
   color: #DEEBF8;
+  font-weight: 600;
+}
+
+.toogler {
+  display: flex;
+  align-items: center;
+}
+
+.toogler p {
+  font-size: 0.7;
+  font-weight: 600;
+}
+
+.toogler--light {
+  color: #2B283A;
+}
+
+nav.dark .toogler--light {
+  color: #918E9B;
+}
+
+.toogler--dark {
+  color: #D5D4D8;
+}
+
+nav.dark .toogler--dark {
+  color: white;
+}
+
+.toogler--slider {
+  width: 25px;
+  height: 13px;
+  background-color: #2B283A;
+  border-radius: 2rem;
+  margin-inline: 7px;
+  cursor: pointer;
+  border: 1px solid black;
+  box-sizing: content-box;
+
+  display: flex;
+  justify-content: flex-start;
+}
+
+nav.dark .toogler--slider {
+  justify-content: flex-end;
+}
+
+nav.dark .toogler--slider {
+  background-color: #F5F5F5;
+  border-color: white;
+}
+
+.toogler--slider--circle {
+  width: 13px;
+  height: 13px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+nav.dark .toogler--slider--circle {
+  background-color: black;
+}
+
+main {
+  color: #2B283A;
   padding: 57px 27px;
   background-image: url('../public/background-logo.png');
   background-repeat: no-repeat;
   background-position: right 75%;
+  flex: 1 1 auto;
+  background-color: white;
 }
 
 .main--title {
   margin: 0;
   font-size: 39px;
   letter-spacing: -0.05em;
+}
+
+main.dark {
+  background-color: #242424;
+  color: white;
 }
 
 .main--facts {
@@ -66,12 +143,9 @@ main {
   font-size: 1.8rem;
 }
 
-.main--image {
-  margin-right: auto;
-  margin-left: 20px;
-}
-
 .footer {
   color: #DEEBF8;
   margin-left: 10px;
+  position: absolute;
+  bottom: 0;
 }
