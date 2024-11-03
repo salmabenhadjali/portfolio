@@ -20,11 +20,11 @@
 }
 
 .bloc {
-    padding: 40px;
+    padding: 20px;
     width: 100%;
     display: grid;
     grid-template: auto auto / repeat(5, 1fr);
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
 .btn-roll {

@@ -1,9 +1,12 @@
+import TravelCardType from "../../types/TravelCard"
 import './TravelCard.css';
 
-function TravelCard(props) {
+function TravelCard(props: TravelCardType) {
   return (
     <figure className="travel">
-      <img src={"/assets/" + props.imagePath} alt={props.title} height="50" width="50"/>
+      <div className="travel__img">
+        <img src={"/assets/" + props.imagePath} alt={props.title} height="50" width="50"/>
+      </div>
       <figcaption>
         <div className="location">
           <div className="pin"></div>

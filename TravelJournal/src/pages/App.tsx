@@ -1,7 +1,7 @@
 import TravelList from '../components/TravelList/TravelList';
 import Navigation from '../components/Navigation/Navigation';
 
-function App() {
+const App = () => {
   return (
     <>
       <header>

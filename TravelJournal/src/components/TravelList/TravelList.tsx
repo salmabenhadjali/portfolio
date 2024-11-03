@@ -1,10 +1,11 @@
-import travels from '../../data/travels.js';
+import TravelCardType from "../../types/TravelCard"
+import travels from '../../data/travels';
 import TravelCard from '../TravelCard/TravelCard';
 
-function TravelList () {
+const TravelList: React.FC = () => {
     return (
         <div className='travels'>
-            {travels.map((travel, index) => (
+            {travels.map((travel: TravelCardType, index: number) => (
                 <TravelCard key={index} {...travel}/>
             ))}
         </div>
