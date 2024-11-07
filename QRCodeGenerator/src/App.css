@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.container h1 {
+  width: 80%;
+  text-align: center;
+}
+
+.conttainer__input,
+.container__label ,
+.container__btn {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+
+  width: 250px;
+  padding: 10px 5px;
+  border-radius: 5px;
+}
+
+.container__btn {
+  background-color: #8C271E;
+  color: whitesmoke;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+input[type="file"].container__input {
+  display: none;
+}
+
+.container__label {
+  background-color: #D9F7FA;
+  text-align: center;
+  font-weight: bolder;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.upload {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: auto;
+  background: url("upload_icon.png") no-repeat center center;
+}
+
+.qrcode-generator {
+  border-radius: 5px;
+}
+
+canvas {
+ display: block;
+ margin: 4rem 0 2rem 0;
+}
+
+.download {
+  background-color: #ABA194;
+  color: black;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
