@@ -1,0 +1,33 @@
+.container {
+  max-width: 740px;
+  width: 100%;
+  margin: auto;
+  padding: 1rem;
+}
+.container h2 {
+  margin-top: 3rem;
+}
+
+.title {
+  text-align: center;
+}
+
+.setting {
+  display: flex;
+  gap: 1rem;
+}
+
+.liSelected {
+  color: #ffffff;
+  background-color: var(--BODY-COLOR);
+  border: 3px solid #fff;
+  opacity: 0.5;
+}
+
+.btn {
+  margin-top: 8rem;
+}
+
+.btn:active {
+  filter: brightness(0.6);
+}

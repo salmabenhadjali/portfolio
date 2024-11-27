@@ -1,0 +1,81 @@
+/* || RESET */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* VARIABLES */
+:root {
+  /* COLOR */
+  --BODY-COLOR: #000925;
+  --DARK-COLOR: #000105;
+  --CORRECT-COLOR: #00d397;
+  --WRONG-COLOR: #ff4a4a;
+
+  --BORDER-RADIUS: 4px;
+}
+
+/* GENERAL STYLES */
+html,
+body {
+  overflow: hidden;
+  background-color: var(--BODY-COLOR);
+}
+
+main {
+  padding: 1rem;
+}
+
+h1,
+h2 {
+  color: #eee;
+}
+
+h3 {
+  padding-bottom: 2rem;
+  color: var(--DARK-COLOR);
+  font-size: 1.8rem;
+}
+
+hr {
+  margin: 20px 0;
+}
+
+button {
+  padding: 16px 8px;
+  width: 100%;
+  margin-top: 12px;
+  font-size: 1rem;
+  border-radius: var(--BORDER-RADIUS);
+  cursor: pointer;
+  background-color: #808080;
+  color: #f8f8f8;
+}
+
+li {
+  list-style-type: none;
+  cursor: pointer;
+  margin: 9px 0;
+  padding: 16px 8px;
+  color: var(--DARK-COLOR);
+  border: 1px solid lightgray;
+  border-radius: var(--BORDER-RADIUS);
+}
+
+a {
+  text-decoration: none;
+  color: #f8f8f8;
+}
+
+.correct {
+  background-color: #dffff2;
+  border-color: var(--CORRECT-COLOR);
+}
+
+.wrong {
+  background-color: #ffebeb;
+  border-color: var(--WRONG-COLOR);
+}
