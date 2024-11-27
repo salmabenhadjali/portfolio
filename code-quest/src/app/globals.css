@@ -11,6 +11,7 @@
 :root {
   /* COLOR */
   --BODY-COLOR: #000925;
+  --BG-COLOR: #d8d8d8;
   --DARK-COLOR: #000105;
   --CORRECT-COLOR: #00d397;
   --WRONG-COLOR: #ff4a4a;
@@ -21,8 +22,9 @@
 /* GENERAL STYLES */
 html,
 body {
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: var(--BODY-COLOR);
+  min-height: 100vh;
 }
 
 main {
@@ -35,13 +37,7 @@ h2 {
 }
 
 h3 {
-  padding-bottom: 2rem;
   color: var(--DARK-COLOR);
-  font-size: 1.8rem;
-}
-
-hr {
-  margin: 20px 0;
 }
 
 button {
@@ -65,9 +61,25 @@ li {
   border-radius: var(--BORDER-RADIUS);
 }
 
+p {
+  padding: 8px 0;
+  color: var(--BODY-COLOR);
+}
+
 a {
   text-decoration: none;
   color: #f8f8f8;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 .correct {

@@ -1,8 +1,8 @@
 export const categories: string[] = [
-    'APIP',
     'PHP',
+    'Symfony',
+    'APIP',
     'React',
-    'Symfony'
 ]
 
 export const levels: string[] = [

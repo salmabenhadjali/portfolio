@@ -1,20 +1,16 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Nunito } from "next/font/google";
 import "./globals.css";
+import Header from "@/componens/header/Header";
+import Footer from "@/componens/footer/Footer";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const nunito = Nunito({
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Code Quest",
+  title: "Quest of Code",
   description: "Embark on a journey through coding challenges",
 };
 
@@ -25,8 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`container ${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`container ${nunito.className}`}>
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

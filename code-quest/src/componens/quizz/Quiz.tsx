@@ -1,24 +1,13 @@
 "use client";
 import React, { useRef, useState } from "react";
 import styles from "./quiz.module.css";
-import { questions } from "@/data/APIP/junior";
-import { answerType } from "@/types/questionType";
+import { answerType, questionType } from "@/types/questionType";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 
-const Quizz = () => {
-  const searchParams = useSearchParams();
-
-  const categories = searchParams.get("categories");
-  const level = searchParams.get("level");
-  console.log(categories, level);
-
+const Quizz = ({ questions }: { questions: questionType[] }) => {
   const [activeQuestionIndex, setActiveQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<boolean | null>(null);
   const [checked, setCheked] = useState(false);
-  const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(
-    null
-  );
   const option1 = useRef<HTMLLIElement>(null);
   const option2 = useRef<HTMLLIElement>(null);
   const option3 = useRef<HTMLLIElement>(null);
@@ -40,7 +29,6 @@ const Quizz = () => {
     e: React.MouseEvent<HTMLLIElement>,
     answer: answerType
   ) => {
-    setSelectedAnswerIndex(answer.id);
     const target = e.target as HTMLLIElement;
     if (checked === false) {
       if (answer.id === rightAnswer[0]) {
@@ -58,7 +46,6 @@ const Quizz = () => {
   // Calculate and increment to next question
   const nextQuestion = () => {
     setSelectedAnswer(null);
-    setSelectedAnswerIndex(null);
     setResult((prev) =>
       selectedAnswer
         ? {
@@ -90,69 +77,74 @@ const Quizz = () => {
   return (
     <div className={styles.container}>
       <h1>Quizz page</h1>
-      <hr />
-      <h2>
-        Question: {activeQuestionIndex + 1}
-        <span> / {questions.length}</span>
-      </h2>
       <div>
         {!showResult ? (
-          <div className={styles.quizContainer}>
-            <h3>{`${activeQuestionIndex + 1}. ${question}`}</h3>
-            <ul>
-              {possibleAnswers.map((answer) => (
-                <li
-                  ref={options[answer.id - 1]}
-                  key={answer.id}
-                  onClick={(e) => onAnswerSelected(e, answer)}
-                >
-                  <span>{answer.text}</span>
-                </li>
-              ))}
-            </ul>
+          <div className={styles.section}>
+            <hr />
+            <h2>
+              Question: {activeQuestionIndex + 1}
+              <span> / {questions.length}</span>
+            </h2>
+            <div className={styles.quizContainer}>
+              <h3>{`${activeQuestionIndex + 1}. ${question}`}</h3>
+              <ul>
+                {possibleAnswers.map((answer) => (
+                  <li
+                    ref={options[answer.id - 1]}
+                    key={answer.id}
+                    onClick={(e) => onAnswerSelected(e, answer)}
+                  >
+                    {answer.text}
+                  </li>
+                ))}
+              </ul>
 
-            {checked ? (
-              <div>
-                <Link target="_blank" className={styles.source} href={source}>
-                  For more details click here
-                </Link>
-                <button onClick={nextQuestion}>
+              {checked ? (
+                <div>
+                  <Link target="_blank" className={styles.source} href={source}>
+                    Click here for more details
+                  </Link>
+                  <button onClick={nextQuestion} className={styles.btn}>
+                    {activeQuestionIndex === questions.length - 1
+                      ? "Finish"
+                      : "Next"}
+                  </button>
+                </div>
+              ) : (
+                <button
+                  onClick={nextQuestion}
+                  disabled
+                  className={styles.btnDisabled}
+                >
                   {activeQuestionIndex === questions.length - 1
                     ? "Finish"
                     : "Next"}
                 </button>
-              </div>
-            ) : (
-              <button
-                onClick={nextQuestion}
-                disabled
-                className={styles.btnDisabled}
-              >
-                {activeQuestionIndex === questions.length - 1
-                  ? "Finish"
-                  : "Next"}
-              </button>
-            )}
+              )}
+            </div>
           </div>
         ) : (
-          <div className={styles.quizContainer}>
-            <h3>Results</h3>
-            <h3>Overall {overall()} %</h3>
-            <p>
-              Total Questions: <span>{questions.length}</span>
-            </p>
-            <p>
-              Total Score: <span>{result.score}</span>
-            </p>
-            <p>
-              Wrong Answers: <span>{result.wrongAnswers}</span>
-            </p>
-            <p>
-              Correct Answers: <span>{result.correctAnswers}</span>
-            </p>
-            <button>
-              <Link href="/">Restart</Link>
-            </button>
+          <div className={styles.section}>
+            <hr />
+            <h2>Results</h2>
+            <div className={styles.quizContainer}>
+              <h3>Overall {overall()} %</h3>
+              <p>
+                Total Questions: <span>{questions.length}</span>
+              </p>
+              <p>
+                Total Score: <span>{result.score}</span>
+              </p>
+              <p>
+                Wrong Answers: <span>{result.wrongAnswers}</span>
+              </p>
+              <p>
+                Correct Answers: <span>{result.correctAnswers}</span>
+              </p>
+              <button className={styles.btn}>
+                <Link href="/">Restart</Link>
+              </button>
+            </div>
           </div>
         )}
       </div>

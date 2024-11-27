@@ -1,19 +1,16 @@
 .container {
-  max-width: 740px;
-  width: 100%;
-  margin: auto;
-  padding: 1rem;
-}
-.container h2 {
-  margin-top: 3rem;
-}
+  padding: 1rem 8%;
+  margin: auto 0;
 
-.title {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
 }
 
 .setting {
   display: flex;
+  justify-content: space-between;
   gap: 1rem;
 }
 
@@ -22,10 +19,6 @@
   background-color: var(--BODY-COLOR);
   border: 3px solid #fff;
   opacity: 0.5;
-}
-
-.btn {
-  margin-top: 8rem;
 }
 
 .btn:active {

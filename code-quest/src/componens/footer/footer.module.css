@@ -1,0 +1,62 @@
+.container {
+  position: sticky;
+  bottom: 0;
+  padding: 1rem;
+  height: 30px;
+  background-color: var(--BG-COLOR);
+  color: var(--DARK-COLOR);
+  font-size: 0.7rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container a {
+  color: var(--DARK-COLOR);
+}
+
+.copyrights {
+  flex: 1;
+  align-items: center;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 20px;
+}
+
+.imgContainer {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon {
+  opacity: 0.6;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.icon:hover {
+  animation: forwards 0.35s slide;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-5%);
+  }
+  60% {
+    transform: translateY(5%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
