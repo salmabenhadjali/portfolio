@@ -74,6 +74,12 @@ const Quizz = ({ questions }: { questions: questionType[] }) => {
     return Math.round((result.score / (answerCoast * questions.length)) * 100);
   };
 
+  const isHTML = (str: string): boolean => {
+    const regex = /<\/?[a-z][\s\S]*>/i;
+
+    return regex.test(str);
+  };
+
   return (
     <div className={styles.container}>
       <h1>Quizz page</h1>
@@ -86,7 +92,15 @@ const Quizz = ({ questions }: { questions: questionType[] }) => {
               <span> / {questions.length}</span>
             </h2>
             <div className={styles.quizContainer}>
-              <h3>{`${activeQuestionIndex + 1}. ${question}`}</h3>
+              {isHTML(question) ? (
+                <h3>
+                  {`${activeQuestionIndex + 1}. `}
+                  <span dangerouslySetInnerHTML={{ __html: question }} />
+                </h3>
+              ) : (
+                <h3>{`${activeQuestionIndex + 1}. ${question}`}</h3>
+              )}
+
               <ul>
                 {possibleAnswers.map((answer) => (
                   <li
