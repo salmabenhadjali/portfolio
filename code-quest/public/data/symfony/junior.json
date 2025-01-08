@@ -166,5 +166,62 @@
         ],
         "rightAnswer": [1],
         "source": "https://symfony.com/doc/current/security/csrf.html"
+    }{
+        "id": 50,
+        "question": "We downloaded a symfony binary during this chapter. Which of the following is most true?",
+        "possibleAnswers": [
+            {"id": 1, "text": "It's a binary that... sort of doesn't have anything to do with Symfony, except that it has a command to help download a new Symfony project."},
+            {"id": 2, "text": "It's a binary that contains Symfony and is able to create new projects that link back to it."}
+        ],
+        "rightAnswer": [1],
+        "source": "https://symfonycasts.com/screencast/symfony6/setup/activity/554"
+    },
+    {
+        "id": 51,
+        "question": "Which of the following are valid ways to create a new Symfony project?",
+        "possibleAnswers": [
+            {"id": 1, "text": "composer create-project symfony/skeleton my_project"},
+            {"id": 2, "text": "Both C and A are correct."},
+            {"id": 3, "text": "symfony new my_project"}
+
+        ],
+        "rightAnswer": [2],
+        "source": "https://symfonycasts.com/screencast/symfony6/setup/activity/555"
+    },
+    {
+        "id": 52,
+        "question": "Which of the following is NOT true:",
+        "possibleAnswers": [
+            {"id": 1, "text": "The src/ directory holds (pretty much) all the PHP code you'll write."},
+            {"id": 2, "text": "The vendor/ directory holds all the 3rd-party library code."},
+            {"id": 3, "text": "The public/ directory holds all 'public' PHP files that you create for different pages."},
+            {"id": 4, "text": "The config/ directory holds configuration files."}
+        ],
+        "rightAnswer": [3],
+        "source": "https://symfonycasts.com/screencast/symfony6/directories/activity/556"
+    },
+    {
+        "id": 53,
+        "question": "What must every controller function return?",
+        "possibleAnswers": [
+            {"id": 1, "text": "A string type or Stringable object"},
+            {"id": 2, "text": "null"},
+            {"id": 3, "text": "A template string or a Response."},
+            {"id": 4, "text": "An instance of Symfony\\Component\\HttpFoundation\\Response"}
+        ],
+        "rightAnswer": [4],
+        "source": "https://symfonycasts.com/screencast/symfony6/directories/activity/557"
+    },
+    {
+        "id": 54,
+        "question": "Check out this route & controller:<pre><code>\n#[Route(\"/user/{username}\")]\npublic function profile(): Response\n{\n}<code></pre><br>Which of the following is true?",
+        "possibleAnswers": [
+            {"id": 1, "text": "You \"can\" have an argument named $username in your profile() method... but it's not required."},
+            {"id": 2, "text": "You must have an argument named exactly $username in your profile() method."},
+            {"id": 3, "text": "You \"can\" have an argument with any name in your profile() method... but it must be the first argument."},
+            {"id": 4, "text": "You are allowed to have an argument with any name in your profile() method: the first argument will receive the {username} value if it exists."}
+        ],
+        "rightAnswer": [1],
+        "source": "https://symfonycasts.com/screencast/symfony6/directories/activity/558"
     }
 ]

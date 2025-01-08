@@ -1,0 +1,14 @@
+[
+    {
+        "id": 54,
+        "question": "Check out this route & controller:<pre><code>\n#[Route(\"/user/{username}\")]\npublic function profile(): Response\n{\n}<code></pre><br>Which of the following is true?",
+        "possibleAnswers": [
+            {"id": 1, "text": "You \"can\" have an argument named $username in your profile() method... but it's not required."},
+            {"id": 2, "text": "You must have an argument named exactly $username in your profile() method."},
+            {"id": 3, "text": "You \"can\" have an argument with any name in your profile() method... but it must be the first argument."},
+            {"id": 4, "text": "You are allowed to have an argument with any name in your profile() method: the first argument will receive the {username} value if it exists."}
+        ],
+        "rightAnswer": [1],
+        "source": "https://symfonycasts.com/screencast/symfony6/directories/activity/558"
+    }
+]
